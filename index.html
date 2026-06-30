@@ -4,260 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeanedisson Rodriguez · Portafolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg-primary: #0a0a14;
-            --bg-card: #12121f;
-            --bg-card-hover: #1a1a2e;
-            --text-primary: #ffffff;
-            --text-secondary: #9898b0;
-            --text-muted: #5a5a72;
-            --accent: #6c63ff;
-            --accent-hover: #7b73ff;
-            --border: #1e1e32;
-            --radius: 14px;
-            --shadow: 0 20px 50px rgba(0,0,0,0.5);
+            --bg: #f5f5f5;
+            --card: #ffffff;
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a6a;
+            --text-muted: #8a8aaa;
+            --accent: #2d2d6b;
+            --accent-light: #e8e8f0;
+            --border: #e0e0e8;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --radius: 12px;
         }
-
-        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg-primary);
+            background: var(--bg);
             color: var(--text-primary);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            padding: 2rem 1rem;
         }
 
         .container {
             max-width: 960px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem;
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem 2.8rem;
         }
 
-        /* ================================================
-           PERFIL
-           ================================================ */
-        .perfil {
-            text-align: center;
-            padding: 5rem 0 3.5rem 0;
-            border-bottom: 1px solid var(--border);
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+            flex-wrap: wrap;
         }
 
-        .perfil .avatar {
-            width: 110px;
-            height: 110px;
+        .header .foto {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), #a855f7);
-            margin: 0 auto 1.5rem;
+            border: 4px solid var(--accent);
+            flex-shrink: 0;
+            background: var(--accent-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: #fff;
-            box-shadow: 0 12px 40px rgba(108, 99, 255, 0.3);
-            transition: transform 0.3s ease;
-        }
-        .perfil .avatar:hover {
-            transform: scale(1.05);
-        }
-
-        .perfil h1 {
             font-size: 3rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.3rem;
+            color: var(--accent);
         }
 
-        .perfil h1 .nombre {
-            background: linear-gradient(135deg, var(--accent), #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .header .info h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
         }
 
-        .perfil .titulo {
+        .header .info .titulo {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+
+        .header .info .descripcion {
             color: var(--text-secondary);
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 0.8rem;
-        }
-
-        .perfil .descripcion {
-            color: var(--text-secondary);
+            font-size: 0.95rem;
             max-width: 550px;
-            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ===== SECCIONES ===== */
+        .seccion {
+            padding: 1.8rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .seccion:last-of-type { border-bottom: none; }
+
+        .seccion .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .seccion .section-title i {
+            font-size: 1rem;
+            color: var(--accent);
+        }
+
+        /* ===== SOBRE MÍ ===== */
+        .sobre-mi {
+            color: var(--text-secondary);
             font-size: 0.95rem;
             font-weight: 300;
             line-height: 1.8;
         }
 
-        /* ================================================
-           HABILIDADES
-           ================================================ */
-        .habilidades {
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .habilidades .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .habilidades .section-title i {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-
+        /* ===== HABILIDADES ===== */
         .badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.7rem;
+            gap: 0.6rem;
         }
 
         .badge {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            padding: 0.5rem 1.3rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 0.4rem 1.2rem;
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 500;
-            color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            transition: all 0.3s ease;
+            gap: 0.5rem;
+            transition: all 0.3s;
         }
 
         .badge:hover {
-            border-color: var(--accent);
+            background: var(--accent);
             color: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.15);
+            transform: translateY(-2px);
         }
 
-        .badge i {
-            font-size: 0.9rem;
-            color: var(--accent);
-        }
+        .badge i { font-size: 0.8rem; }
 
-        .badge.destacado {
-            border-color: var(--accent);
-            background: rgba(108, 99, 255, 0.08);
-            color: #fff;
-        }
-
-        /* ================================================
-           PROYECTOS
-           ================================================ */
-        .proyectos {
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .proyectos .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .proyectos .section-title i {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-
+        /* ===== PROYECTOS ===== */
         .proyecto-card {
-            background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 2rem 2.2rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.35s ease;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            background: var(--bg);
         }
 
         .proyecto-card:hover {
-            background: var(--bg-card-hover);
             border-color: var(--accent);
-            transform: translateY(-5px);
             box-shadow: var(--shadow);
+            transform: translateY(-3px);
         }
 
         .proyecto-card .header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.5rem;
+            gap: 0.8rem;
+            border-bottom: none;
+            padding: 0;
+            flex-wrap: wrap;
         }
 
         .proyecto-card .header .icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: rgba(108, 99, 255, 0.12);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--accent-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
             color: var(--accent);
+            font-size: 1.1rem;
             flex-shrink: 0;
         }
 
         .proyecto-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #fff;
+            color: var(--text-primary);
         }
 
         .proyecto-card p {
             color: var(--text-secondary);
             font-size: 0.9rem;
             font-weight: 300;
-            line-height: 1.8;
-            margin: 0.5rem 0 1.2rem 0;
-            padding-left: 0.2rem;
+            line-height: 1.7;
+            margin: 0.5rem 0 0.8rem 0;
+            padding-left: 3.2rem;
         }
 
         .proyecto-card .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.2rem;
+            gap: 0.4rem;
+            padding-left: 3.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .proyecto-card .tag {
-            background: rgba(108, 99, 255, 0.06);
-            border: 1px solid rgba(108, 99, 255, 0.08);
-            padding: 0.2rem 0.9rem;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 500;
+            background: var(--border);
             color: var(--text-secondary);
+            padding: 0.1rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.65rem;
+            font-weight: 500;
         }
 
         .proyecto-card .links {
             display: flex;
-            gap: 1.8rem;
+            gap: 1.5rem;
+            padding-left: 3.2rem;
             flex-wrap: wrap;
         }
 
         .proyecto-card .links a {
-            color: var(--text-secondary);
+            color: var(--accent);
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
@@ -268,112 +236,81 @@
         }
 
         .proyecto-card .links a:hover {
-            color: var(--accent);
+            color: var(--text-primary);
+            text-decoration: underline;
         }
 
-        .proyecto-card .links a i {
-            font-size: 0.8rem;
-        }
-
-        /* ================================================
-           CONTACTO
-           ================================================ */
+        /* ===== CONTACTO ===== */
         .contacto {
-            padding: 3rem 0 2rem 0;
+            padding: 1.8rem 0 0 0;
             text-align: center;
-        }
-
-        .contacto .section-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-        }
-
-        .contacto .section-title i {
-            color: var(--accent);
-            font-size: 1.2rem;
         }
 
         .contacto .links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 1rem;
         }
 
         .contacto a {
             color: var(--text-secondary);
             text-decoration: none;
-            padding: 0.6rem 1.8rem;
-            border: 1px solid var(--border);
-            border-radius: 50px;
             font-size: 0.9rem;
             font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
             transition: all 0.3s ease;
+            background: var(--bg);
         }
 
         .contacto a:hover {
             color: #fff;
+            background: var(--accent);
             border-color: var(--accent);
-            background: rgba(108, 99, 255, 0.08);
             transform: translateY(-2px);
         }
 
         .contacto a i {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--accent);
         }
 
-        /* ================================================
-           FOOTER
-           ================================================ */
+        .contacto a:hover i {
+            color: #fff;
+        }
+
+        /* ===== FOOTER ===== */
         .footer {
             text-align: center;
-            padding-top: 2.5rem;
+            padding-top: 1.8rem;
+            margin-top: 1rem;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
             font-size: 0.8rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.6rem;
         }
 
-        .footer i {
-            color: var(--accent);
-            font-size: 0.75rem;
-        }
-
-        /* ================================================
-           RESPONSIVE
-           ================================================ */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .container { padding: 1.5rem; }
-
-            .perfil { padding: 3rem 0 2.5rem; }
-            .perfil h1 { font-size: 2.2rem; }
-            .perfil .avatar { width: 85px; height: 85px; font-size: 2rem; }
-
-            .proyecto-card { padding: 1.5rem; }
-
-            .contacto .links { flex-direction: column; align-items: center; }
-            .contacto a { width: 100%; max-width: 280px; justify-content: center; }
+            .header { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+            .header .info .descripcion { max-width: 100%; }
+            .proyecto-card p,
+            .proyecto-card .tags,
+            .proyecto-card .links { padding-left: 0; }
+            .proyecto-card .header { justify-content: center; }
         }
 
         @media (max-width: 480px) {
-            .perfil h1 { font-size: 1.6rem; }
-            .perfil .descripcion { font-size: 0.85rem; }
-            .proyecto-card .header .icon { width: 36px; height: 36px; font-size: 1rem; }
-            .proyecto-card h3 { font-size: 1rem; }
-            .badge { font-size: 0.7rem; padding: 0.3rem 0.9rem; }
-            .proyecto-card .links { gap: 1rem; }
+            .container { padding: 1rem; }
+            .header .foto { width: 100px; height: 100px; font-size: 2.2rem; }
+            .header .info h1 { font-size: 1.6rem; }
+            .contacto .links { flex-direction: column; align-items: center; }
+            .contacto a { width: 100%; max-width: 260px; justify-content: center; }
         }
     </style>
 </head>
@@ -382,38 +319,57 @@
     <div class="container">
 
         <!-- ========================================== -->
-        <!-- PERFIL -->
+        <!-- HEADER -->
         <!-- ========================================== -->
-        <section class="perfil">
-            <div class="avatar">JR</div>
-            <h1>Jeanedisson <span class="nombre">Rodriguez</span></h1>
-            <p class="titulo">Desarrollador Web y Móvil</p>
-            <p class="descripcion">
-                Apasionado por el desarrollo de software y la tecnología.
-                Creo experiencias digitales funcionales, seguras y adaptadas
-                a las necesidades del usuario.
-            </p>
+        <div class="header">
+            <div class="foto">JR</div>
+            <div class="info">
+                <h1>Jeanedisson Rodriguez</h1>
+                <p class="titulo">Estudiante de Ingeniería en Sistemas</p>
+                <p class="descripcion">
+                    Apasionado por el desarrollo de software y la tecnología.
+                    Busco crecer profesionalmente, mejorar mis habilidades técnicas
+                    y adquirir experiencia en proyectos desafiantes.
+                </p>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SOBRE MÍ -->
+        <!-- ========================================== -->
+        <section class="seccion">
+            <h2 class="section-title">
+                <i class="fas fa-user"></i> Sobre mí
+            </h2>
+            <div class="sobre-mi">
+                <p>
+                    Soy estudiante de Ingeniería en Sistemas con experiencia en atención al cliente y gestión de inventarios.
+                    Me apasiona el desarrollo de interfaces y la lógica de programación. He trabajado en proyectos personales
+                    como tiendas en línea y aplicaciones móviles, lo que me ha permitido fortalecer mis habilidades técnicas.
+                    Mi objetivo es seguir aprendiendo, mejorar mis capacidades en desarrollo frontend y backend,
+                    y aportar soluciones innovadoras en un entorno profesional.
+                </p>
+            </div>
         </section>
 
         <!-- ========================================== -->
         <!-- HABILIDADES -->
         <!-- ========================================== -->
-        <section class="habilidades">
+        <section class="seccion">
             <h2 class="section-title">
                 <i class="fas fa-cogs"></i> Habilidades
             </h2>
             <div class="badges">
-                <span class="badge destacado"><i class="fab fa-html5"></i> HTML5</span>
-                <span class="badge destacado"><i class="fab fa-css3-alt"></i> CSS3</span>
-                <span class="badge destacado"><i class="fab fa-js"></i> JavaScript</span>
-                <span class="badge destacado"><i class="fab fa-php"></i> PHP</span>
-                <span class="badge destacado"><i class="fas fa-mobile-alt"></i> Flutter</span>
-                <span class="badge destacado"><i class="fab fa-dart"></i> Dart</span>
+                <span class="badge"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="badge"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="badge"><i class="fab fa-php"></i> PHP</span>
+                <span class="badge"><i class="fas fa-mobile-alt"></i> Flutter</span>
+                <span class="badge"><i class="fab fa-dart"></i> Dart</span>
                 <span class="badge"><i class="fab fa-git-alt"></i> Git</span>
                 <span class="badge"><i class="fab fa-github"></i> GitHub</span>
                 <span class="badge"><i class="fas fa-plug"></i> APIs REST</span>
                 <span class="badge"><i class="fas fa-shield-alt"></i> Seguridad Web</span>
-                <span class="badge"><i class="fas fa-fingerprint"></i> Biometría</span>
                 <span class="badge"><i class="fas fa-tablet-alt"></i> Responsive</span>
                 <span class="badge"><i class="fas fa-database"></i> Shared Preferences</span>
             </div>
@@ -422,7 +378,7 @@
         <!-- ========================================== -->
         <!-- PROYECTOS -->
         <!-- ========================================== -->
-        <section class="proyectos">
+        <section class="seccion">
             <h2 class="section-title">
                 <i class="fas fa-folder-open"></i> Proyectos
             </h2>
@@ -492,12 +448,9 @@
         <!-- CONTACTO -->
         <!-- ========================================== -->
         <section class="contacto">
-            <h2 class="section-title">
-                <i class="fas fa-envelope"></i> Contacto
-            </h2>
             <div class="links">
-                <a href="mailto:jeroguezrpz@gmail.com">
-                    <i class="fas fa-envelope"></i> Correo
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jeroguezrpz@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i> Gmail
                 </a>
                 <a href="https://github.com/Jeroguez" target="_blank">
                     <i class="fab fa-github"></i> GitHub
@@ -512,8 +465,7 @@
         <!-- FOOTER -->
         <!-- ========================================== -->
         <div class="footer">
-            <i class="fas fa-code"></i>
-             Jeanedisson Rodriguez · Desarrollador Web y Móvil
+            &copy; Jeanedisson Rodriguez · Estudiante de Ingeniería en Sistemas
         </div>
 
     </div>
