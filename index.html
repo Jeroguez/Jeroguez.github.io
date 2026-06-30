@@ -240,6 +240,16 @@
             text-decoration: underline;
         }
 
+        .proyecto-card .links a.disabled {
+            color: var(--text-muted);
+            cursor: default;
+        }
+
+        .proyecto-card .links a.disabled:hover {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
         /* ===== CONTACTO ===== */
         .contacto {
             padding: 1.8rem 0 0 0;
@@ -383,7 +393,7 @@
                 <i class="fas fa-folder-open"></i> Proyectos
             </h2>
 
-            <!-- PROYECTO 1 -->
+            <!-- PROYECTO 1: Esencia Urbana -->
             <div class="proyecto-card">
                 <div class="header">
                     <div class="icon"><i class="fas fa-store"></i></div>
@@ -413,7 +423,7 @@
                 </div>
             </div>
 
-            <!-- PROYECTO 2 -->
+            <!-- PROYECTO 2: Ziro App -->
             <div class="proyecto-card">
                 <div class="header">
                     <div class="icon"><i class="fas fa-mobile-alt"></i></div>
@@ -433,8 +443,8 @@
                     <span class="tag">Shared Preferences</span>
                 </div>
                 <div class="links">
-                    <a href="#" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> Ver proyecto
+                    <a href="#" class="disabled">
+                        <i class="fas fa-clock"></i> Próximamente en Play Store
                     </a>
                     <a href="https://github.com/Jeroguez/ziro-app" target="_blank">
                         <i class="fab fa-github"></i> Ver código
@@ -465,7 +475,7 @@
         <!-- FOOTER -->
         <!-- ========================================== -->
         <div class="footer">
-            &copy; Jeanedisson Rodriguez · Estudiante de Ingeniería en Sistemas
+            &copy;Jeanedisson Rodriguez · Estudiante de Ingeniería en Sistemas
         </div>
 
     </div>
